@@ -1,0 +1,14 @@
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\bin\Release\netcoreapp2.2\AuctionWebApp.Common.deps.json
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\bin\Release\netcoreapp2.2\AuctionWebApp.Common.runtimeconfig.json
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\bin\Release\netcoreapp2.2\AuctionWebApp.Common.runtimeconfig.dev.json
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\bin\Release\netcoreapp2.2\AuctionWebApp.Common.dll
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\bin\Release\netcoreapp2.2\AuctionWebApp.Common.pdb
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\bin\Release\netcoreapp2.2\AuctionWebApp.Models.dll
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\bin\Release\netcoreapp2.2\AuctionWebApp.Models.pdb
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\obj\Release\netcoreapp2.2\AuctionWebApp.Common.csprojAssemblyReference.cache
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\obj\Release\netcoreapp2.2\AuctionWebApp.Common.csproj.CoreCompileInputs.cache
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\obj\Release\netcoreapp2.2\AuctionWebApp.Common.AssemblyInfoInputs.cache
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\obj\Release\netcoreapp2.2\AuctionWebApp.Common.AssemblyInfo.cs
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\obj\Release\netcoreapp2.2\AuctionWebApp.Common.csproj.CopyComplete
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\obj\Release\netcoreapp2.2\AuctionWebApp.Common.dll
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Common\obj\Release\netcoreapp2.2\AuctionWebApp.Common.pdb

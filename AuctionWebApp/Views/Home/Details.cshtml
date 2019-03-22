@@ -1,0 +1,125 @@
+﻿@using System.Data
+@model AuctionWebApp.Models.Item
+@{
+    ViewBag.Title = Model.Name;
+}
+
+@{ 
+    Bet resultBet = null;
+    try
+    {
+        if (Model.Bets.ToArray() != null && Model.Bets.ToArray().Count() != 0)
+        {
+            resultBet = Model.Bets.FindLast(
+                      delegate (Bet bt)
+                      {
+                          return bt.Slot.Id == Model.Id;
+                      });
+        }
+    }
+    catch (Exception)
+    {
+    }
+}
+    
+
+
+<table class="table">
+    <tr style="font-size: 20px"><td><h2 style="color: tomato">Slot: @Model.Name </h2></td><td style="text-align: center">Last Bets</td></tr>
+    <tr>
+        <td>
+            <dl class="dl-horizontal">
+                <dd><img src="@Model.ImgUrl" style=" max-width: 350px;" /></dd>
+                <dd><h4>Close after @TimerModule.DifferenceTime(Model.RemoveDate)</h4></dd>
+
+                <dt>Current bet</dt>
+                @if (resultBet != null)
+                {
+                    <dd>
+                        @resultBet.Owner.UserName -> $@resultBet.BetPrice 
+                        <a class="btn btn-sm btn-primary" asp-controller="Bets" asp-action="Create" asp-route-id="@Model.Id">Make bet</a>
+                    </dd>
+                }
+                else
+                {
+                    <dd>
+                        No 
+                        <a class="btn btn-sm btn-primary" asp-controller="Bets" asp-action="Create" asp-route-id="@Model.Id">Make bet</a>
+                    </dd>
+                }
+
+                <dt>Buyout price</dt>
+                <dd>
+                    $@Model.BuyoutPrice 
+                    <a class="btn btn-sm btn-primary" asp-controller="Bets" asp-action="Buyout" asp-route-id="@Model.Id">Buyout</a>
+                </dd>
+
+                <dt>Start price</dt>
+                <dd>$@Model.StartPrice</dd>
+
+                <dt>Registration time</dt>
+                <dd>@Model.CreateDate.ToString("dd.MM.yyyy hh:mm")</dd>
+
+                <dt>Close time</dt>
+                <dd>@Model.RemoveDate.ToString("dd.MM.yyyy hh:mm")</dd>
+
+                <dt>Period for sale</dt>
+                <dd>@Model.Term hours</dd>
+
+                <dt>Owner</dt>
+                <dd>@Model.Owner.UserName</dd>
+                <dd>@Model.Owner.Email</dd>
+
+                <dd>
+                    <a class="item-link" asp-action="Edit" asp-controller="Home" asp-route-id="@Model.Id">Edit </a> |
+                    <a class="item-link" asp-action="Delete" asp-controller="Home" asp-route-id="@Model.Id"> Delete</a>
+                </dd>
+            </dl>
+        </td>
+        <td>
+            <div id="bets-diagram" style="width: 850px; height: 700px;"></div>
+        </td>
+    </tr>
+</table>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+   @{
+       List<AuctionWebApp.Models.Bet> bets = Model.Bets.ToList();
+       
+   }
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'User name');
+        data.addColumn('number', 'Buyout price');
+        data.addColumn('number', 'Bet price');
+
+        @for (int i = 0; i < Model.Bets.ToList().Count(); i++)
+         {
+            <text>
+            data.addRows([
+            ['@Model.Bets.ToList()[i].Owner.UserName', @Model.BuyoutPrice, @Model.Bets.ToList()[i].BetPrice],
+        ]);
+            </text>
+        }
+
+
+        var options = {
+            colors: ['f5c962', '25f544'],
+            vAxis: {
+                minValue: 0,
+                maxValue: @Model.BuyoutPrice + 100
+            },
+        };
+
+        var chart = new google.visualization.SteppedAreaChart(document.getElementById('bets-diagram'));
+
+        chart.draw(data, options);
+    }
+
+</script>

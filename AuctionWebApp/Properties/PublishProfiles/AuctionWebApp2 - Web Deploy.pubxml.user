@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH6h/G3e3Yk27srNaeg0FmwAAAAACAAAAAAAQZgAAAAEAACAAAAAzBgGYRmSdOpH5nFimvKe2RMymw8xdabCN3a71DWnQHgAAAAAOgAAAAAIAACAAAAAinuuLH1q1t4cQd9ya3KjpzinHQ7FojKHFeT392nr504AAAAAUmdlaMKwfvvq/FKJNNDUrZK2gYC+VQKLU/NxhCLCb32BgdJNP2ZHXZusMT32R6sQWOjTcfIdn3w7fuho6gBUZu5g4ffveNUSU9dmzsh6LkOpyUwmg5nayPd2Dju7+/iiq/yxZQbkqJKYZSSuUXR7+AGb8GRWwFS3hYb/q9y0Tp0AAAAB+njuecHYPJj1bE96K/Z2Dd57Ib2YTCeFQVuiCsIKxyeTv/AEVlpbYqj0VchOTCd0DnmOhwg84vOB6kFoRbpoF</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:auctionwebapp20190315054413dbserver.database.windows.net,1433%3bInitial Catalog=AuctionDB%3bPersist Security Info=False%3bUser ID=leksyCode%3bPassword=Bender888%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="AuctionWebApp.Models.AuctionIdentityContext">
+      <Value>Server=tcp:auctionwebapp20190315054413dbserver.database.windows.net,1433%3bInitial Catalog=AuctionDB%3bPersist Security Info=False%3bUser ID=leksyCode%3bPassword=Bender888%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,57 @@
+﻿
+@model IEnumerable<AuctionWebApp.Models.Item>
+@{
+    ViewData["Title"] = "All allows slots";
+}
+
+<table class="table">
+    <tr style="font-size: 20px"><td>Slot</td><td>Last Bet</td><td>Buyout</td><td>Start Price</td><td>Closing Date</td><td><a asp-action="Create">Add slot</a></td></tr>
+    @foreach (var item in Model)
+    {
+        Bet resultBet = null;
+        try
+        {
+            if (item.Bets.ToArray() != null && item.Bets.ToArray().Count() != 0)
+            {
+                resultBet = item.Bets.FindLast(
+                          delegate (Bet bt)
+                          {
+                              return bt.Slot.Id == item.Id;
+                          });
+            }
+        }
+        catch (Exception)
+        {
+        }
+
+    <tr>
+        <td>
+            <a class="item-link" asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">@item.Name </a> <br />
+            <a asp-action="Details" asp-controller="Home" asp-route-id="@item.Id"> <img src="@item.ImgUrl" style=" max-width: 200px;" /></a>
+        </td>
+        @if (resultBet != null)
+        {
+            <td>
+                @resultBet.Owner.UserName -> $@resultBet.BetPrice <br />
+                <a class="btn btn-sm btn-primary" asp-controller="Bets" asp-action="Create" asp-route-id="@item.Id">Make bet</a>
+            </td>
+        }
+        else
+        {
+            <td>
+                No <br />
+                <a class="btn btn-sm btn-primary" asp-controller="Bets" asp-action="Create" asp-route-id="@item.Id">Make bet</a>
+            </td>
+        }
+
+        <td>$@item.BuyoutPrice<br /> 
+        <form asp-controller="Bets" asp-action="Buyout"  asp-route-id="@item.Id" method="post">
+            <input class="btn btn-sm btn-primary" type="submit"  value="Buyout" />
+        </form>
+        <td>$@item.StartPrice</td>
+        <td>left to close lot: <p style="color: tomato"> @TimerModule.DifferenceTime(item.RemoveDate)</p> </td>
+
+
+    </tr>
+    }
+</table>

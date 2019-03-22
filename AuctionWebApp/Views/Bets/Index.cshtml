@@ -1,0 +1,20 @@
+﻿@model IEnumerable<AuctionWebApp.Models.Bet>
+@{
+    ViewBag.Title = "Bets List";
+}
+<h2>Bets List</h2>
+
+<table class="table">
+    <tr><th>Photo</th><th>Slot</th><th>Bet price</th><th>Create date</th><th>Owner name</th><th>Owner Email</th></tr>
+    @foreach (var bet in Model)
+    {
+    <tr>
+        <td><img src="@bet.Slot.ImgUrl" style="max-width: 100px;" /></td>
+        <td>@bet.Slot.Name</td>
+        <td>$@bet.BetPrice</td>
+        <td>@bet.CreateDate.ToString("hh:mm dd.MM.yyyy")</td>
+        <td>@bet.Owner.UserName</td>
+        <td>@bet.Owner.Email</td>
+    </tr>
+    }
+</table>

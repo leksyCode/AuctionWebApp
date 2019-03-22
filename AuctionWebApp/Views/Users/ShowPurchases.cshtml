@@ -1,0 +1,24 @@
+﻿
+@model IEnumerable<AuctionWebApp.Models.Item>
+@{
+    ViewData["Title"] = "Shopping cart";
+}
+<h4>Shopping cart</h4>
+<table class="table">
+    <tr style="font-size: 20px"><td>Slot</td><td>Buyout</td><td>Start Price</td><td>Purchase date</td></tr>
+    @foreach (var item in Model)
+    {
+        
+
+    <tr>
+        <td>
+            <a class="item-link" asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">@item.Name </a> <br />
+            <a asp-action="Details" asp-controller="Home" asp-route-id="@item.Id"> <img src="@item.ImgUrl" style=" max-width: 200px;" /></a>
+        </td>
+        <td>
+            $@item.BuyoutPrice
+        <td>$@item.StartPrice</td>
+        <td>@item.Bets.ToArray()[item.Bets.Count-1].CreateDate.ToString("hh:mm dd.MM.yyyy")</td>
+    </tr>
+    }
+</table>

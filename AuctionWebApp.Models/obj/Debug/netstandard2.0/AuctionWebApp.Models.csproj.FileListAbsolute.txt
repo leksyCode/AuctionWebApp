@@ -1,0 +1,4 @@
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Models\obj\Debug\netstandard2.0\AuctionWebApp.Models.csprojAssemblyReference.cache
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Models\obj\Debug\netstandard2.0\AuctionWebApp.Models.csproj.CoreCompileInputs.cache
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Models\obj\Debug\netstandard2.0\AuctionWebApp.Models.AssemblyInfoInputs.cache
+C:\Users\nikol\source\repos\AuctionWebApp\AuctionWebApp.Models\obj\Debug\netstandard2.0\AuctionWebApp.Models.AssemblyInfo.cs

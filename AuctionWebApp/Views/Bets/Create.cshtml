@@ -1,0 +1,49 @@
+﻿
+@model AuctionWebApp.Models.Bet
+@{
+    ViewBag.Title = "Create Bet";
+}
+<form asp-action="create" asp-controller="bets">
+    <div class="form-group">
+        <label asp-for="BetPrice" class="control-label">Your offer</label>
+        <input asp-for="BetPrice" class="form-control" />
+    </div> 
+    <div class="form-group">
+        <input type="submit" value="Send" class="btn btn-default" />
+    </div>
+</form>
+
+
+@*@model AuctionWebApp.Models.Bet
+    @{
+        ViewBag.Title = Model.Slot.Name;
+    }
+    <h2 style="color: tomato">Slot: @Model.Slot.Name;</h2>
+    <div>
+        <dl class="dl-horizontal">
+
+            <dd><img src="@Model.Slot.ImgUrl" style=" max-width: 350px;" /></dd>
+            <dd><h4>Close after @TimerModule.DifferenceTime(Model.Slot.RemoveDate)</h4></dd>
+
+
+            <dt>Start price</dt>
+            <dd>@Model.Slot.StartPrice$</dd>
+
+            <dt>Buyout price</dt>
+            <dd>@Model.Slot.BuyoutPrice$</dd>
+
+
+            <dt>Registration time</dt>
+            <dd>@Model.Slot.CreateDate.ToString("dd.MM.yyyy hh:mm")</dd>
+
+            <dt>Close time</dt
+            <dd>@Model.Slot.RemoveDate.ToString("dd.MM.yyyy hh:mm")</dd>
+
+            <dt>Period for sale</dt>
+            <dd>@Model.Slot.Term hours</dd>
+
+            <dt>Owner</dt>
+            <dd>@Model.Slot.Owner.UserName</dd>
+            <dd>@Model.Slot.Owner.Email</dd>
+        </dl>
+    </div>*@

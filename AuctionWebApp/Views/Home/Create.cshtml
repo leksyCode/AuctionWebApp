@@ -1,0 +1,26 @@
+﻿@model AuctionWebApp.Models.Item
+@{
+    ViewBag.Title = "Create Slot";
+}
+<form asp-action="create" asp-controller="home">
+    
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="StartPrice" class="control-label">Start price</label>
+        <input asp-for="StartPrice" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="BuyoutPrice" class="control-label">Buyout</label>
+        <input asp-for="BuyoutPrice" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Term" class="control-label">Term in hours</label>
+        <input asp-for="Term" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Send" class="btn btn-default" />
+    </div>
+</form>

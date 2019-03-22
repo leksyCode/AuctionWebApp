@@ -1,0 +1,22 @@
+﻿@model AuctionWebApp.Models.Item
+@{
+    ViewBag.Title = "Delete slot";
+}
+
+<div>
+    <p style="font-size: 28px;">Are you want delete this slot before will end closing date (@Model.CreateDate.ToString("hh:mm dd.MM.yyyy"))?</p>
+    <dl class="dl-horizontal">
+        <dd>Slot: @Model.Name </dd>
+        <dd>Id: @Model.Id</dd>
+        <img src="@Model.ImgUrl" style=" max-width: 350px;" />
+
+    </dl>
+    <p style="font-size: 22px;">All bets for this slot will be rejected.</p>
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="item-link" value="Confirm delete" />
+            </div>
+        </form>
+    </div>
+</div>
